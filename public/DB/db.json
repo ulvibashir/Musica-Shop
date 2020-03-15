@@ -1,0 +1,87 @@
+{
+  "musics": [
+    {
+      "id": 1,
+      "title": "Oh my Deer",
+      "artist": "by Artist",
+      "rate": "4",
+      "description": "Lorem ipsum dolor sit, con advert, sed diam main alert noun.",
+      "price": "14.99",
+      "salePrice": null,
+      "imgPath": "/images/Items/image-1.png"
+    },
+    {
+      "id": 2,
+      "title": "Awaken the Hero",
+      "artist": "by Artist",
+      "rate": "4",
+      "description": "Lorem ipsum dolor sit, con advert, sed diam main alert noun.",
+      "price": "17.59",
+      "salePrice": null,
+      "imgPath": "/images/Items/image-2.png"
+    },
+    {
+      "id": 3,
+      "title": "Oh my Deer",
+      "artist": "by Artist",
+      "rate": "4",
+      "description": "Lorem ipsum dolor sit, con advert, sed diam main alert noun.",
+      "price": "8.99",
+      "salePrice": null,
+      "imgPath": "/images/Items/image-3.png"
+    },
+    {
+      "id": 4,
+      "title": "Ravenna",
+      "artist": "by Artist",
+      "rate": "4",
+      "description": "Lorem ipsum dolor sit, con advert, sed diam main alert noun.",
+      "price": "22.99",
+      "salePrice": null,
+      "imgPath": "/images/Items/image-4.png"
+    },
+    {
+      "id": 5,
+      "title": "Caribou",
+      "artist": "by Artist",
+      "rate": "4",
+      "description": "Lorem ipsum dolor sit, con advert, sed diam main alert noun.",
+      "price": "14.99",
+      "salePrice": "8.99",
+      "imgPath": "/images/Items/sale-1.png"
+    },
+    {
+      "id": 6,
+      "title": "Aqualung",
+      "artist": "by Artist",
+      "rate": "4",
+      "description": "Lorem ipsum dolor sit, con advert, sed diam main alert noun.",
+      "price": "14.99",
+      "salePrice": "8.99",
+      "imgPath": "/images/Items/sale-2.png"
+    },
+    {
+      "id": 7,
+      "title": "Strange to ears",
+      "artist": "by Artist",
+      "rate": "4",
+      "description": "Lorem ipsum dolor sit, con advert, sed diam main alert noun.",
+      "price": "14.99",
+      "salePrice": "8.99",
+      "imgPath": "/images/Items/sale-3.png"
+    },
+    {
+      "id": 8,
+      "title": "Ravenna",
+      "artist": "by Artist",
+      "rate": "4",
+      "description": "Lorem ipsum dolor sit, con advert, sed diam main alert noun.",
+      "price": "14.99",
+      "salePrice": "8.99",
+      "imgPath": "/images/Items/sale-4.png"
+    }
+  ],
+  "card": [
+    
+  ]
+}

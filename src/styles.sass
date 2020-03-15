@@ -1,0 +1,732 @@
+*
+    margin: 0
+    padding: 0
+    scroll-behavior: smooth
+
+body
+    overflow-x: hidden
+
+.container
+    width: 1160px
+    margin: 0 auto
+    height: 100%
+    min-width: 1160px
+
+.row
+    display: flex
+
+
+/* Additional Header */
+
+.additional-header 
+    width: 100%
+    min-width: 1160px
+    height: 30px
+    border-top: 3px solid #cc3333
+    background-color: #2a2b2c
+
+.icons 
+    margin-top: 3px
+    & img
+        margin-left: 5px
+        cursor: pointer
+        opacity: .7
+    & img:hover
+        opacity: 1
+
+
+.additional-header-container
+    display: flex   
+    justify-content: space-between
+
+
+
+.link-button 
+    font-family: 'Verdana'
+
+    display: flex   
+    height: 30px
+    align-items: center
+    p
+        color: white
+        margin: 0 5px
+        font-size: 12px
+
+.link
+    color: white
+    text-decoration: none
+    font-size: 12px
+    &:hover
+        text-decoration: underline
+
+
+
+.card-btn
+    position: relative
+    cursor: pointer
+    transition: all .5s ease
+    margin-left: 50px
+    display: flex
+    background-color: #cc3333
+    border: none
+    outline: none
+    justify-content: space-around
+    height: 100%
+    width: 110px
+    align-items: center
+    & p
+        color: white
+    & img
+        width: 25px
+        height: 25px
+    &:hover
+        background-color: #a61e1e
+        
+    
+        
+/* Main Header */
+.main-header
+    width: 100%
+    min-width: 1160px
+    background-image: url('http://localhost:3000/images/background.png')
+    background-size: cover
+    background-repeat: repeat
+    height: 90px
+
+.main-header-container
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    img
+        cursor: pointer
+    
+
+.main-header-links
+    list-style: none
+    display: flex
+    & li
+        font-size: 18px
+        font-weight: 600
+        font-family: 'Oswald'
+        text-transform: uppercase
+        margin-left: 80px
+        border: 2px solid transparent
+        padding: 5px
+        cursor: pointer
+        transition: all .5s ease
+
+
+    & li:hover
+        border: 2px solid black
+        border-radius: 10px
+        padding: 5px
+
+
+/* Image Section */
+
+.image-section 
+    display: flex
+    align-items: center
+    width: 100%
+    min-width: 1160px
+    height: 500px
+    border: 1px solid gray
+    background-color: #1e1e20
+
+.image-container
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow-x: hidden
+    img
+        height: 420px !important
+        width: 920px !important
+
+
+
+.arrow-btn-container
+    display: flex
+    position: absolute
+    justify-content: space-between
+    width: 100%
+    min-width: 1160px
+    button
+        border-radius: 100%
+        width:  75px
+        height: 75px
+        outline: none
+        border: none
+        transition: all .5s ease
+        background-color: rgba(0, 0, 0, .7)
+        z-index: 10
+    button:hover
+        transform: scale(1.2)
+
+    .left-btn
+        margin-left: 110px
+    .right-btn
+        margin-right: 110px
+
+
+.card-slider
+    position: relative
+    margin: 0 auto
+    max-width: 920px
+  
+        
+.card-slider-wrapper
+    display: flex
+    position: relative
+    transition: transform .7s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    img
+        flex: 1
+        margin: 15px
+        opacity: 0.3
+        transition: opacity .3s linear, transform .7s cubic-bezier(0.455, 0.03, 0.515, 0.955), all .7s ease 
+        transform: scale(0.7)
+        position: relative
+        box-shadow: 0 0 0 black
+
+    
+
+    /* Red header for Image */
+
+    // &::after
+    //     content: 'MUSIC EVENT WITH DJ STARTING AT 20.00 ON AUGUST 15TH'
+    //     background-color: #a61e1e
+    //     color: white
+    //     font-family: 'Oswald'
+    //     text-align: left
+    //     padding: 7px 0 9px 30px
+    //     position: absolute
+    //     display: block
+    //     opacity: .7
+    //     bottom: 15px
+    //     left: 15px
+    //     width: calc( 100% - 30px)
+    //     font-size: 17px
+
+
+
+
+
+.card-slider.active-card-0 #card-0
+    opacity: 1 !important
+    transform: scale(1) 
+    box-shadow: 0 0 15px black
+.card-slider.active-card-1 #card-1
+    opacity: 1 !important
+    transform: scale(1)
+    box-shadow: 0 0 15px black
+.card-slider.active-card-2 #card-2
+    opacity: 1 !important
+    transform: scale(1)
+    box-shadow: 0 0 15px black
+.card-slider.active-card-3 #card-3
+    opacity: 1 !important
+    transform: scale(1)
+    box-shadow: 0 0 15px black
+.card-slider.active-card-4 #card-4
+    opacity: 1 !important
+    transform: scale(1)
+    box-shadow: 0 0 15px black
+
+
+
+
+/* Body Heading */
+.body-heading
+    width: 100%
+    min-width: 1160px
+    background-image: url('http://localhost:3000/images/background.png')
+    background-size: cover
+    background-repeat: repeat
+    height: 450px
+
+
+.body-heading-container
+    padding-top: 50px
+    display: flex
+    flex-direction: column
+    text-align: center
+    font-size: 42px
+    font-weight: 400
+    font-family: 'Oswald', sans-serif !important
+    text-transform: uppercase
+    span
+        background: #cd3737
+        padding: 0 6px
+        color: white
+        border-radius: 2px
+
+    img 
+        margin: 15px 0
+
+
+.big-btn-item 
+    cursor: pointer
+    transition: all .4s ease
+    text-justify: left
+    padding: 15px
+    color: white
+    width: 315px
+    height: 90px
+    background-color: #1e1e20
+    font-family: 'Oswald', sans-serif !important
+    text-align: center
+    border-radius: 5px
+    div
+        display: flex
+        justify-content: space-around
+        margin-bottom: 12px
+        p
+            font-size: 20px
+    &:hover
+        background-color: #2c2c4b
+            
+.big-buttons
+    margin-top: 70px
+    display: flex
+    justify-content: space-between
+.red 
+    background-color: #cc3333 !important
+    &:hover
+        background-color: #9b2828 !important
+
+.upcoming 
+    div
+        justify-content: start
+        img
+            margin-right: 40px
+            margin-left: 20px
+
+
+/* Latest Arrivals and Albums Currently and Our Publishers section headers */
+
+.latest-arrival-section
+    width: 100%
+    min-width: 1160px
+    height: 615px
+    background-image: url('http://localhost:3000/images/background.png')
+    background-size: cover
+    background-repeat: repeat
+
+
+
+.section-header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 50px
+    p
+        font-family: 'Oswald'
+        white-space: nowrap
+        text-transform: uppercase
+        font-size: 28px
+    
+    button
+        margin-left: 5px
+        background-color: #cc3333
+        border-radius: 5px
+        padding: 6px
+        border: none
+        outline: none
+        color: white
+        transition: all .2s ease
+        cursor: pointer
+        &:hover
+            background-color: #9b2828
+    
+.section-line-img
+    width: 67%
+    overflow: hidden
+
+
+.albums-currently-section
+    width: 100%
+    min-width: 1160px
+    height: 615px
+    background-image: url('http://localhost:3000/images/background.png')
+    background-size: cover
+    background-repeat: repeat
+
+
+
+/* Important Publisher Section */    
+.important-publisher-section
+    width: 100%
+    min-width: 1160px
+    height: 350px
+    background-image: url('http://localhost:3000/images/background.png')
+    background-size: cover
+    background-repeat: repeat
+
+.publisher-container
+    padding-top: 30px
+    display: flex
+    justify-content: center
+    img
+        width: 17%
+        height: 17%
+        cursor: pointer
+
+/* Main Footer */
+.main-footer
+    position: relative
+    width: 100%
+    min-width: 1160px
+    height: 350px
+    background-image: url('http://localhost:3000/images/background_footer.png')
+    background-size: cover
+    background-repeat: repeat
+    border-top: 9px solid #000
+
+.inner-container
+    display: flex
+    padding-top: 30px
+    .part
+        width: calc( 100% / 4 )
+////////////////////////////////////I
+.little-about-us
+    display: flex
+    flex-direction: column
+    color: white
+    font-family: 'Segoe UI'
+    span
+        font-weight: 700
+    p:nth-child(1), p:nth-child(3)
+        font-size: 25px
+        margin-bottom: 25px
+    p:nth-child(2)
+        font-size: 15px
+        margin-bottom: 50px
+    
+.about-icon-container
+    display: flex
+    justify-content: flex-start
+    width: 100%
+    img
+        margin-right: 7px
+        cursor: pointer
+        opacity: .5
+    & img:hover
+        opacity: 1
+
+/////////////////////////////I
+.our-archives
+    padding-left: 50px
+    color: white
+    font-family: 'Segoe UI'
+    p:nth-child(1)
+        font-size: 25px
+        margin-bottom: 25px
+    &:not(:first-child)
+        font-size: 17px
+    p
+        margin-bottom: 7px
+
+////////////////////////////////I
+.popular-inner-container
+    display: flex
+    flex-direction: column
+    color: white
+    font-family: 'Segoe UI'
+    p:nth-child(1)
+        font-size: 25px
+        margin-bottom: 25px
+
+.post
+    display: flex
+    margin-bottom: 15px
+.post-image
+    border: 6px solid #28292a
+    border-radius: 2px
+    cursor: pointer
+
+.right-div
+    display: flex
+    width: 100%
+    flex-direction: column
+    p
+        margin-bottom: 5px !important
+        font-size: 18px !important
+        text-align: start
+        margin-left: 15px
+        font-weight: 600
+
+.comment-div
+    margin-left: 15px
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    p
+        margin-left: 13px
+        text-align: center
+        font-size: 15px !important  
+
+/////////////////////////////////I
+
+
+.search-our-site
+    color: white
+    font-family: 'Segoe UI'
+    p
+        font-size: 25px
+        margin-bottom: 20px
+    input
+        outline: none
+        color: white
+        margin-bottom: 25px
+        border: 1px solid #3b3b3b
+        padding: 10px
+        width: 70%
+        font-style: italic
+        background-color: #131313
+    button
+        background-color: #2a2a2a
+        border-radius: 2px
+        color: white
+        padding: 5px 8px
+        outline: none
+        border: none
+        margin: 2px
+        cursor: pointer
+        transition: all .4s ease
+        &:hover
+            background-color: #555353
+.btn-container-footer
+    display: flex
+    flex-wrap: wrap
+    width: 70%
+
+.go-top
+    padding: 8px 15px 3px 13px
+    background-color: #cc3333
+    position: absolute
+    top: -30px
+    right: 50px
+    text-decoration: none
+    font-weight: 700
+    color: white
+    font-size: 30px
+    border-radius: 5px
+
+
+/* Card Sections */
+
+
+
+.main-card
+    width: 238px
+    height: 400px
+    background-color: white
+    border-radius: 5px  
+    box-shadow: 0 0 9px #979797
+    border: none
+    font-family: 'Arial'
+
+.card-title-artist
+    display: flex
+    margin-top: 10px
+.card-title
+    margin-left: 15px
+    font-size: 17px
+    font-weight: 550 
+
+.card-artist
+    font-style: italic   
+    margin-left: 15px
+    font-size: 15px
+
+.card-description
+    text-overflow: ellipsis
+    overflow: hidden
+    padding: 0 15px
+    margin-top: 20px
+    font-size: 14px
+
+.price-discount-div
+    display: flex
+    margin-top: 30px
+    padding-left: 15px
+    justify-content: space-between
+    button
+        margin-right: 15px
+        padding: 7px
+        border: none
+        border-radius: 5px
+        color: white
+        background: #1e1e20
+        text-transform: uppercase
+        font-size: 11px
+        cursor: pointer
+        outline: none
+        transition: all .4s ease
+        &:hover
+            background-color: #424277   
+            
+    .card-price
+        font-weight: 600
+        font-size: 19px
+    .card-price-old
+        text-decoration: line-through
+        font-size: 15px
+    .card-sale-price
+        background-color: #cc3333
+        align-items: center
+        text-align: center
+        display: flex
+        border-radius: 2px
+        padding: 4px 
+        color: white
+        font-size: 15px
+        font-weight: 600
+
+.added-card-btn
+    background-color: green !important
+    //////////////////////////I
+    
+/* Card Slider */
+.cards-div-slider-wrapper
+    position: absolute
+    padding-left: 2px
+    width: 204%
+    display: flex
+    justify-content: space-between
+    transition: transform .7s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+
+
+
+
+.cards-div-slider
+    margin-top: 55px
+    position: relative
+    overflow: hidden
+    height: 420px
+   
+/* Checkout Panel*/
+    
+.checkout-panel
+    position: absolute
+    width: 400px
+    background: white
+    right: 325px
+    border-radius: 9px
+    z-index: 11
+    box-shadow: 0 0 10px
+    overflow-y: scroll
+    overflow-x: hidden
+
+.checkout-item
+    
+    display: flex
+    font-family: 'Arial'
+    height: 100px
+    align-items: center
+    position: relative
+    &::after
+        content: '....................................................................................................'
+        position: absolute
+        color: black
+        width: 100%
+        bottom: 0
+    img
+        
+        width: 60px
+        height: 60px
+        border-radius: 10px
+        margin-left: 20px
+
+.checkout-about
+    padding-top: 40px
+    height: 100%
+    display: flex
+    flex-direction: column
+    width: 100%
+    align-items: flex-start
+
+
+.checkout-title-artist-price-div
+    display: flex
+    justify-content: space-between
+    width: 100%
+    
+
+.checkout-title
+    font-weight: 600
+    margin-left: 10px
+.checkout-price
+    font-weight: 600
+    margin-right: 20px
+.checkout-artist
+    font-style: italic
+    font-size: 15px
+
+.rate-button
+    margin-top: 9px
+    display: flex
+    width: 100%
+    justify-content: flex-end
+    button
+        margin-right: 20px
+        border-radius: 100%
+        background-color: #cc3333
+        font-size: 13px
+        color: white
+        font-weight: 600
+        border: none
+        outline: none
+        width: 23px
+        height: 23px
+        transition: all .4s ease
+        &:hover
+            background-color: #9b2828
+
+.relative
+    position: absolute
+    width: 1160px
+    min-width: 1160px
+    height: 100%
+    margin: 0 auto
+
+.total-price
+    display: flex
+    justify-content: space-between
+    position: relative
+    font-family: 'Arial'
+    align-items: center
+    &::after
+        content: '....................................................................................................'
+        position: absolute
+        color: black
+        width: 100%
+        bottom: 0
+
+.total-text
+    color: black
+    font-size: 18px
+    font-weight: 600
+    padding: 15px
+.total-value
+    font-size: 30px
+    color: #cc3333
+    font-weight: 600
+    padding: 15px 20px 15px 15px 
+
+
+.checkout-btn
+    display: flex
+    align-items: center
+    margin: 17px
+    button
+        margin-right: 10px
+        padding: 12px
+        color: white
+        background-color: #1e1e20
+        border: none
+        outline: none
+        transition: all .4s ease
+        &:hover
+            background-color: #424277   
