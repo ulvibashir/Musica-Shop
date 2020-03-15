@@ -1,5 +1,9 @@
 const domain = 'https://my-json-server.typicode.com/ulvibashir/DB';
 
+
+/* If you want use local DB/db.json you need to run json-server 3004 port */
+// const domain = 'http://localhost:3004';
+
 function fetchFabric(endpoint, method) {
 
     return async (getParams = '', postParams = {}) => {
