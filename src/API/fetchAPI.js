@@ -1,4 +1,4 @@
-const domain = 'http://localhost:3004';
+const domain = 'https://my-json-server.typicode.com/ulvibashir/DB';
 
 function fetchFabric(endpoint, method) {
 
