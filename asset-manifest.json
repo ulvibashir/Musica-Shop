@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Musica-Shop/static/css/main.b36ad158.chunk.css",
+    "main.js": "/Musica-Shop/static/js/main.a35a7248.chunk.js",
+    "main.js.map": "/Musica-Shop/static/js/main.a35a7248.chunk.js.map",
+    "runtime-main.js": "/Musica-Shop/static/js/runtime-main.2f9bf049.js",
+    "runtime-main.js.map": "/Musica-Shop/static/js/runtime-main.2f9bf049.js.map",
+    "static/js/2.b43275e2.chunk.js": "/Musica-Shop/static/js/2.b43275e2.chunk.js",
+    "static/js/2.b43275e2.chunk.js.map": "/Musica-Shop/static/js/2.b43275e2.chunk.js.map",
+    "index.html": "/Musica-Shop/index.html",
+    "precache-manifest.ab46fed805f9aa04bcc0dcafff0e3bc0.js": "/Musica-Shop/precache-manifest.ab46fed805f9aa04bcc0dcafff0e3bc0.js",
+    "service-worker.js": "/Musica-Shop/service-worker.js",
+    "static/css/main.b36ad158.chunk.css.map": "/Musica-Shop/static/css/main.b36ad158.chunk.css.map",
+    "static/js/2.b43275e2.chunk.js.LICENSE.txt": "/Musica-Shop/static/js/2.b43275e2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2f9bf049.js",
+    "static/js/2.b43275e2.chunk.js",
+    "static/css/main.b36ad158.chunk.css",
+    "static/js/main.a35a7248.chunk.js"
+  ]
+}
