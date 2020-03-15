@@ -85,8 +85,8 @@ function MainFooter() {
 
                 </div>
             </div>
-
-            <a className="go-top" href='google.com'>^</a>
+            
+            <a className="go-top" href='#'>^</a>
         </div>
     )
 }

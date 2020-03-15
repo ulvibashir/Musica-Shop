@@ -544,12 +544,12 @@ body
     text-overflow: ellipsis
     overflow: hidden
     padding: 0 15px
-    margin-top: 20px
+    margin-top: 11px
     font-size: 14px
 
 .price-discount-div
     display: flex
-    margin-top: 30px
+    margin-top: 12px
     padding-left: 15px
     justify-content: space-between
     button
@@ -611,6 +611,7 @@ body
 .checkout-panel
     position: absolute
     width: 400px
+    max-height: 500px
     background: white
     right: 325px
     border-radius: 9px
@@ -730,3 +731,20 @@ body
         transition: all .4s ease
         &:hover
             background-color: #424277   
+
+
+
+
+.star-container
+    display: flex
+    justify-content: flex-start
+    padding: 8px 8px 8px 14px
+
+.active-star
+    transition: all .3s ease
+    color: #cc3333
+    transform: scale(1.5)
+.nonactive-star
+    transition: all .3s ease
+    color: gray
+    transform: scale(1)

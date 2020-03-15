@@ -17,9 +17,9 @@ function AdditionalHeader({onCheckOutBtnClick, count}) {
                     </div>
                         
                     <div className="link-button">
-                        <a className="link" href="/">Login</a>
+                        <a className="link" href="#">Login</a>
                             <p>/</p>
-                        <a className="link" href="/">Register</a>
+                        <a className="link" href="#">Register</a>
 
 
                         <button className="card-btn" onClick={onCheckOutBtnClick}>
