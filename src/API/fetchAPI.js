@@ -21,3 +21,7 @@ function fetchFabric(endpoint, method) {
 export const musicsFetch = fetchFabric('/musics', 'GET');
 export const cardFetch = fetchFabric('/card', 'GET');
 export const addCard = fetchFabric('/card', 'POST');
+export const editCard = fetchFabric('/card', 'PUT');
+export const deleteCard = fetchFabric('/card', 'DELETE');
+
+

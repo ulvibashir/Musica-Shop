@@ -9,21 +9,26 @@ import AlbumsCurrently from './components/CardsSection/AlbumsCurrently'
 import ImportantPublisher from './components/ImportantPublisher/ImportantPublisher'
 import MainFooter from './components/MainFooter/MainFooter'
 import Checkout from './components/CardsSection/Checkout'
-import { /*addCard,*/ cardFetch } from './API/fetchAPI'
+import { addCard, cardFetch, editCard, deleteCard} from './API/fetchAPI'
 
 
 function App() {
-
   const [isCheckOutOpen, setIsCheckOutOpen] = useState(false)
   const [cards, setCard] = useState([])
 
   const onClickAddBtn = (e, newCard) => {
-    
+
     const isExist = cards.find(item => item.id === newCard.id);
 
     if (isExist) {
       setCard(card => card.map(item => {
         if (item.id === newCard.id) {
+
+            //Edit card localStorage
+            editCard(`/${newCard.id}`,{
+              ...item,
+              count: item.count + 1
+            })
           return {
             ...item,
             count: item.count + 1
@@ -31,30 +36,53 @@ function App() {
         }
         return item;
       }))
-    } else {
-      setCard(card => [...card, {
-        ...newCard,
-        count: 1
-      }])
+      
+    } 
+    
+    else {
+      setCard(card => {
+
+
+        // Add card localStorage
+        addCard('', {
+          ...newCard,
+          count: 1
+        });
+
+        return [...card, {
+          ...newCard,
+          count: 1
+        }]
+      }
+
+
+      )
     }
 
+    console.log(newCard)
 
-
-    // addCard('',newCard);
   }
 
   const onClickRemoveBtn = (e, oldCard) => {
     if (oldCard.count > 1) {
       setCard(cart => cart.map(item => {
         if (item.id === oldCard.id) {
-          return {
+
+
+          editCard(`/${oldCard.id}`,{
             ...item,
             count: item.count - 1
+          })
+          
+          return {
+            ...item,
+            count: item.count - 1,
           }
         }
         return item
       }))
     } else {
+      deleteCard(`/${oldCard.id}`)
       setCard(cart => cart.filter(item => item.id !== oldCard.id))
     }
   }
@@ -68,7 +96,7 @@ function App() {
   }, [])
 
   const onCheckOutBtnClick = () => setIsCheckOutOpen(!isCheckOutOpen);
-  
+
 
 
 
