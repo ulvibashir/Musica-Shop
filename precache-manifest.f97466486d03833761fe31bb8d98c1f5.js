@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "78757d1d166caf8b96348e39df90860f",
+    "revision": "a98661b8afcfc56b0fc6162f7ae82eeb",
     "url": "/Musica-Shop/index.html"
   },
   {
-    "revision": "cff7cd7b3364c4f10925",
-    "url": "/Musica-Shop/static/css/main.b36ad158.chunk.css"
+    "revision": "2734f69e71778096179b",
+    "url": "/Musica-Shop/static/css/main.0a8f728d.chunk.css"
   },
   {
     "revision": "603226add7325da1ef09",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Musica-Shop/static/js/2.b43275e2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cff7cd7b3364c4f10925",
-    "url": "/Musica-Shop/static/js/main.a35a7248.chunk.js"
+    "revision": "2734f69e71778096179b",
+    "url": "/Musica-Shop/static/js/main.2cdbc916.chunk.js"
   },
   {
     "revision": "6f4aaae8597375e36363",
