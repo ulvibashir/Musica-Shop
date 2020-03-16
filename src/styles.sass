@@ -502,6 +502,7 @@ body
     width: 70%
 
 .go-top
+    cursor: pointer
     padding: 8px 15px 3px 13px
     background-color: #cc3333
     position: absolute
@@ -607,13 +608,26 @@ body
     height: 420px
    
 /* Checkout Panel*/
+
+.container-checkout
+    width: 100%
+    position: absolute
+    z-index: 11
+    display: block
+    
+.inner-container
+    padding: 0
+    width: 1160px
+    min-width: 1160px
+    margin: 0 auto
+    display: flex
+    justify-content: flex-end
+
     
 .checkout-panel
-    position: absolute
     width: 400px
     max-height: 500px
     background: white
-    right: 325px
     border-radius: 9px
     z-index: 11
     box-shadow: 0 0 10px
@@ -748,3 +762,4 @@ body
     transition: all .3s ease
     color: gray
     transform: scale(1)
+

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+ import React, { useState, useEffect } from 'react'
 const slideImages = [
     process.env.PUBLIC_URL + '/images/SlideImages/main.png',
     process.env.PUBLIC_URL + '/images/SlideImages/main2.png',
