@@ -1,10 +1,10 @@
  import React, { useState, useEffect } from 'react'
 const slideImages = [
-    process.env.PUBLIC_URL + '/images/SlideImages/main.png',
-    process.env.PUBLIC_URL + '/images/SlideImages/main2.png',
-    process.env.PUBLIC_URL + '/images/SlideImages/main3.png',
-    process.env.PUBLIC_URL + '/images/SlideImages/main4.png',
-    process.env.PUBLIC_URL + '/images/SlideImages/main5.png'
+    '/images/SlideImages/main.png',
+    '/images/SlideImages/main2.png',
+    '/images/SlideImages/main3.png',
+    '/images/SlideImages/main4.png',
+    '/images/SlideImages/main5.png'
 ];
 
 
@@ -45,11 +45,11 @@ function ImageSection() {
             <div className="arrow-btn-container">
 
                 <button className="left-btn" onClick={onClickLeft}>
-                    <img src={process.env.PUBLIC_URL + '/images/Icons/arrows/left.png'} alt="arrow-left"></img>
+                    <img src={'/images/Icons/arrows/left.png'} alt="arrow-left"></img>
                 </button>
 
                 <button className="right-btn" onClick={onClickRight}>
-                    <img src={process.env.PUBLIC_URL + '/images/Icons/arrows/right.png'} alt="arrow-right"></img>
+                    <img src={'/images/Icons/arrows/right.png'} alt="arrow-right"></img>
                 </button>
 
             </div>

@@ -4,7 +4,7 @@ function MainHeader() {
         <div className="main-header">
             <div className="container">
                 <div className="main-header-container">
-                    <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="logo" />
+                    <img src={'/images/logo.png'} alt="logo" />
 
                     <ul className="main-header-links">
                         <li>Home</li>

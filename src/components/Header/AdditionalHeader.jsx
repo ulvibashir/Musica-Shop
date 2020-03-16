@@ -9,12 +9,13 @@ function AdditionalHeader({onCheckOutBtnClick, count}) {
 
 
                     <div className="icons">
-                        <img src={process.env.PUBLIC_URL + '/images/Icons/facebook.png'} alt="facebook" />
-                        <img src={process.env.PUBLIC_URL + '/images/Icons/dribble.png'} alt="dribble" />
-                        <img src={process.env.PUBLIC_URL + '/images/Icons/twitter.png'} alt="twitter" />
-                        <img src={process.env.PUBLIC_URL + '/images/Icons/mail.png'} alt="mail" />
-                        <img src={process.env.PUBLIC_URL + '/images/Icons/vimeo.png'} alt="vimeo" />
+                        <img src={'/images/Icons/facebook.png'} alt="facebook" />
+                        <img src={'/images/Icons/dribble.png'} alt="dribble" />
+                        <img src={'/images/Icons/twitter.png'} alt="twitter" />
+                        <img src={'/images/Icons/mail.png'} alt="mail" />
+                        <img src={'/images/Icons/vimeo.png'} alt="vimeo" />
                     </div>
+
                         
                     <div className="link-button">
                         <p className="link" href="#">Login</p>
@@ -23,7 +24,7 @@ function AdditionalHeader({onCheckOutBtnClick, count}) {
 
 
                         <button className="card-btn" onClick={onCheckOutBtnClick}>
-                            <img src={process.env.PUBLIC_URL + '/images/Icons/card.png'} alt="card"/>
+                            <img src={'/images/Icons/card.png'} alt="card"/>
                             <p>Card</p>
                             <p>({count})</p>
                         </button>

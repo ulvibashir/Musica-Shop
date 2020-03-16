@@ -50,7 +50,7 @@ function AlbumsCurrently({onClickAddBtn}) {
                 <div className="section-header">
                     <p>Albums Currently on Sale</p>
                     <div className="section-line-img">
-                        <img src={process.env.PUBLIC_URL + '/images/line.png'} alt="line" />
+                        <img src={'/images/line.png'} alt="line" />
                     </div>
                     <div>
                         
