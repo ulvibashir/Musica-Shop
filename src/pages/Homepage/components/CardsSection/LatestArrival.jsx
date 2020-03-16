@@ -1,21 +1,21 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from './Card'
-import { musicsFetch } from '../../API/fetchAPI';
+import { musicsFetch } from '../../../../API/fetchAPI';
+import background from '../Header/background.png';
 
-function AlbumsCurrently({onClickAddBtn}) {
+const style = {
+    backgroundImage: `url(${background})`
+}
+function LatestArrival({onClickAddBtn, onClickRemoveFavorite, onClickAddFavorite, favorites}) {
 
     const [data, setData] = useState([]);
 
     // First index of card which will be shown / activeStar --> activeStart + 4
     const [activeStart, setActiveStart] = useState(0);
 
-
-
-
     useEffect(() => {
         (async () => {
             const newData = await musicsFetch();
-            newData.reverse();
             setData(newData);
         })()
     }, [])
@@ -33,28 +33,17 @@ function AlbumsCurrently({onClickAddBtn}) {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
     return (
-        <div className="albums-currently-section">
+        <div className="latest-arrival-section" style={style}>
             <div className="container">
                 <div className="section-header">
-                    <p>Albums Currently on Sale</p>
+                    <p>Latest Arrivals in Musica</p>
                     <div className="section-line-img">
-                        <img src={'/images/line.png'} alt="line" />
+                        <img src={process.env.PUBLIC_URL + '/images/line.png'} alt="line" />
                     </div>
                     <div>
-                        
-                    {
+
+                        {
                             activeStart !== 0 &&
                              <button onClick={onGoLeft}>←</button>
                         }
@@ -78,9 +67,12 @@ function AlbumsCurrently({onClickAddBtn}) {
                                 description={description}
                                 price={price}
                                 salePrice={salePrice}
-                                imgPath={imgPath}
+                                imgPath={process.env.PUBLIC_URL + imgPath}
                                 key={id}
                                 onClickAddBtn={onClickAddBtn}
+                                onClickRemoveFavorite ={onClickRemoveFavorite}
+                                onClickAddFavorite ={onClickAddFavorite}
+                                favorites={favorites}
                             />
 
                         ))}
@@ -88,10 +80,9 @@ function AlbumsCurrently({onClickAddBtn}) {
 
                 </div>
 
-
             </div>
         </div>
     )
 }
 
-export default AlbumsCurrently;
+export default LatestArrival;

@@ -1,8 +1,13 @@
 import React from 'react'
+import background from './background_footer.png';
+
+const style = {
+    backgroundImage: `url(${background})`
+}
 
 function MainFooter() {
     return (
-        <div className="main-footer">
+        <div className="main-footer" style={style}>
             <div className="container">
                 <div className="inner-container">
                     <div className="little-about-us part">
@@ -12,13 +17,13 @@ function MainFooter() {
                            Lorem ipsum <span>dolor sit</span> amet, conse
                            ctetuer adipiscing elit.</p>
                         <p>Socialize with us</p>
-
+                    
                         <div className="about-icon-container">
-                            <img src={'/images/Icons/footer/facebook.png'} alt="icon" />
-                            <img src={'/images/Icons/footer/twitter.png'} alt="icon" />
-                            <img src={'/images/Icons/footer/globe.png'} alt="icon" />
-                            <img src={'/images/Icons/footer/dribble.png'} alt="icon" />
-                            <img src={'/images/Icons/footer/mail.png'} alt="icon" />
+                            <img src={process.env.PUBLIC_URL + '/images/Icons/footer/facebook.png'} alt="icon" />
+                            <img src={process.env.PUBLIC_URL + '/images/Icons/footer/twitter.png'} alt="icon" />
+                            <img src={process.env.PUBLIC_URL + '/images/Icons/footer/globe.png'} alt="icon" />
+                            <img src={process.env.PUBLIC_URL + '/images/Icons/footer/dribble.png'} alt="icon" />
+                            <img src={process.env.PUBLIC_URL + '/images/Icons/footer/mail.png'} alt="icon" />
 
                         </div>
 
@@ -40,12 +45,12 @@ function MainFooter() {
                         <div className="popular-inner-container">
                             <p>Popular Posts</p>
                             <div className="post">
-                                <img className="post-image" src={'/images/footer/image-1.png'} alt="post-1" />
+                                <img className="post-image" src={process.env.PUBLIC_URL + '/images/footer/image-1.png'} alt="post-1" />
                                 <div className="right-div">
                                     <p>Great Album</p>
 
                                     <div className="comment-div">
-                                        <img src={'/images/Icons/footer/comment.png'} alt="comment" />
+                                        <img src={process.env.PUBLIC_URL + '/images/Icons/footer/comment.png'} alt="comment" />
                                         <p>12 Comments</p>
 
                                     </div>
@@ -53,11 +58,11 @@ function MainFooter() {
                                 </div>
                             </div>
                             <div className="post">
-                                <img className="post-image" src={'/images/footer/image.png'} alt="comment" />
+                                <img className="post-image" src={process.env.PUBLIC_URL + '/images/footer/image.png'} alt="comment" />
                                 <div className="right-div">
                                     <p>Great Album</p>
                                     <div className="comment-div">
-                                        <img src={'/images/Icons/footer/comment.png'} alt="comment" />
+                                        <img src={process.env.PUBLIC_URL + '/images/Icons/footer/comment.png'} alt="comment" />
                                         <p>12 Comments</p>
                                     </div>
 

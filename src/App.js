@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import './styles.sass';
-import AdditionalHeader from './components/Header/AdditionalHeader'
-import MainHeader from './components/Header/MainHeader'
-import ImageSection from './components/ImageSection/ImageSection'
-import BodyHeading from './components/Body/BodyHeading';
-import LatestArrival from './components/CardsSection/LatestArrival'
-import AlbumsCurrently from './components/CardsSection/AlbumsCurrently'
-import ImportantPublisher from './components/ImportantPublisher/ImportantPublisher'
-import MainFooter from './components/MainFooter/MainFooter'
-import Checkout from './components/CardsSection/Checkout'
-import { addCard, cardFetch, editCard, deleteCard} from './API/fetchAPI'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+import Homepage from './pages/Homepage/Homepage'
+import FavoritesPage from './pages/Favorites/FavoritesPage'
+import CardPage from './pages/CardPage/CardPage'
+import { addCard, cardFetch, editCard, deleteCard, addFavorite, deleteFavorite, favoritesFetch } from './API/fetchAPI'
+
+
 
 
 function App() {
   const [isCheckOutOpen, setIsCheckOutOpen] = useState(false)
   const [cards, setCard] = useState([])
+  const [favorites, setFavorites] = useState([])
+
 
   const onClickAddBtn = (e, newCard) => {
 
@@ -59,7 +59,6 @@ function App() {
       )
     }
 
-    console.log(newCard)
 
   }
 
@@ -88,6 +87,28 @@ function App() {
   }
 
 
+  const onClickAddFavorite = (newCard) => {
+    console.log(favorites)
+    addFavorite('', newCard);
+    setFavorites([...favorites, newCard])
+  }
+  const onClickRemoveFavorite = (oldCard) => {
+    deleteFavorite(`/${oldCard.id}`, oldCard);
+    setFavorites(item => item.filter(item => item.id !== oldCard.id))
+
+  }
+
+
+
+  useEffect(() => {
+    (async () => {
+      const newData = await favoritesFetch();
+      setFavorites(newData)
+    })()
+
+  }, [])
+
+
   useEffect(() => {
     (async () => {
       const newData = await cardFetch();
@@ -95,26 +116,47 @@ function App() {
     })()
   }, [])
 
+
+
+
+
+
+
+
+
   const onCheckOutBtnClick = () => setIsCheckOutOpen(!isCheckOutOpen);
 
-
-
-
-
-
-
   return (
-    <div className="App">
-      <AdditionalHeader onCheckOutBtnClick={onCheckOutBtnClick} count={cards.length} />
-      {isCheckOutOpen && <Checkout cards={cards} onClickRemoveBtn={onClickRemoveBtn} />}
-      <MainHeader />
-      <ImageSection />
-      <BodyHeading />
-      <LatestArrival onClickAddBtn={onClickAddBtn} />
-      <AlbumsCurrently onClickAddBtn={onClickAddBtn} />
-      <ImportantPublisher />
-      <MainFooter />
-    </div>
+    <Router>
+
+    
+      <Switch>
+        <Route exact path="/" render={(props) => (<Homepage {...props} 
+              isCheckOutOpen={isCheckOutOpen}
+              cards={cards}
+              onCheckOutBtnClick={onCheckOutBtnClick}
+              onClickAddBtn={onClickAddBtn}
+              onClickRemoveBtn={onClickRemoveBtn}
+              onClickAddFavorite={onClickAddFavorite}
+              onClickRemoveFavorite={onClickRemoveFavorite}
+              favorites={favorites}
+        
+         />)} />
+        
+
+        <Route exact path="/card" render={(props) => (<CardPage {...props} 
+            cards={cards}
+            onClickRemoveBtn={onClickRemoveBtn}
+        />)} />
+        <Route exact path="/favorites" render={(props) => (<FavoritesPage {...props} 
+              favorites={favorites} 
+              onClickAddFavorite={onClickAddFavorite}
+              onClickRemoveFavorite={onClickRemoveFavorite}
+              /> )} />
+
+        <Route render={() => (<h1>404 Not Found</h1>)} />
+      </Switch>
+    </Router>
   );
 }
 

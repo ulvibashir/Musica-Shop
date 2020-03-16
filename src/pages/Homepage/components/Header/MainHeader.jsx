@@ -1,12 +1,18 @@
 import React from 'react'
+import background from './background.png';
+
+const style = {
+    backgroundImage: `url(${background})`
+}
 function MainHeader() {
-    return (
-        <div className="main-header">
+    return (    
+        <div className="main-header" style={style}>
             <div className="container">
                 <div className="main-header-container">
-                    <img src={'/images/logo.png'} alt="logo" />
+                    <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="logo" />
 
                     <ul className="main-header-links">
+
                         <li>Home</li>
                         <li>CD`s</li>
                         <li>Listen</li>

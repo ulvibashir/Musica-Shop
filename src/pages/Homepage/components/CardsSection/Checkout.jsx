@@ -1,9 +1,10 @@
 import React from 'react'
 import CheckoutItem from './CheckoutItem';
+import { NavLink } from 'react-router-dom'
 
 
 
-function Checkout({ cards, onClickRemoveBtn }) {
+function Checkout({ cards, onClickRemoveBtn, isNewPage }) {
 
     const total = () => {
         let sum = 0;
@@ -19,8 +20,7 @@ function Checkout({ cards, onClickRemoveBtn }) {
 
 
     return (
-        <div className="container-checkout">
-            <div className="inner-container">
+        
                 <div className="checkout-panel">
                     {cards.map(({ id, title, artist, rate, price, imgPath, salePrice, count }) => (
                         <CheckoutItem id={id}
@@ -45,14 +45,17 @@ function Checkout({ cards, onClickRemoveBtn }) {
                     </div>
 
 
-                    <div className="checkout-btn">
-                        <button>View Card -→</button>
-                        <button>Proceed to Checkout -→</button>
+                    { !isNewPage &&
 
-                    </div>
+                        <div className="checkout-btn">
+                            <NavLink className="go-card-btn" to="/card">View Card -→</NavLink>
+                            
+                            <NavLink className="go-card-btn" to="/favorites">Favorites -→</NavLink>
+
+                        </div>
+                    }
                 </div>
-            </div>
-        </div>
+   
 
     )
 }
