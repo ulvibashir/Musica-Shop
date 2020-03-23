@@ -1,11 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import './styles.sass';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Homepage from './pages/Homepage/Homepage'
-import FavoritesPage from './pages/Favorites/FavoritesPage'
-import CardPage from './pages/CardPage/CardPage'
-import { addCard, cardFetch, editCard, deleteCard, addFavorite, deleteFavorite, favoritesFetch } from './API/fetchAPI'
+import {
+  CardPage,
+  FavoritesPage,
+  Homepage
+} from './pages'
+
+import {
+  addCard,
+  cardFetch,
+  editCard,
+  deleteCard,
+  addFavorite,
+  deleteFavorite,
+  favoritesFetch
+} from './API/fetchAPI'
 
 
 
@@ -15,8 +26,8 @@ function App() {
   const [cards, setCard] = useState([])
   const [favorites, setFavorites] = useState([])
 
-
-  const onClickAddBtn = (e, newCard) => {
+  
+  const onClickAddBtn = (newCard) => {
 
     const isExist = cards.find(item => item.id === newCard.id);
 
@@ -24,11 +35,23 @@ function App() {
       setCard(card => card.map(item => {
         if (item.id === newCard.id) {
 
-            //Edit card localStorage
+            //Edit card on db.json
             editCard(`/${newCard.id}`,{
               ...item,
               count: item.count + 1
             })
+
+            //Edit card on LocalStorage
+            let tmp = JSON.parse(localStorage.getItem('card'));
+
+            for (let localCard of tmp){
+              if(localCard.id === newCard.id){
+                localCard.count++;
+              }
+            }
+            localStorage.setItem('card', JSON.stringify(tmp))   
+
+
           return {
             ...item,
             count: item.count + 1
@@ -42,12 +65,30 @@ function App() {
     else {
       setCard(card => {
 
-
-        // Add card localStorage
+        // Add card to db.json
         addCard('', {
           ...newCard,
           count: 1
         });
+
+
+        //Add card to LocalStorage
+        let tmp = JSON.parse(localStorage.getItem('card'))
+        if (tmp) {
+
+          tmp = [...tmp, {
+            ...newCard,
+            count: 1
+          }]
+          localStorage.setItem('card', JSON.stringify(tmp))
+
+        } else {
+
+          localStorage.setItem('card', JSON.stringify([{
+            ...newCard,
+            count: 1
+          }]))
+        }
 
         return [...card, {
           ...newCard,
@@ -62,17 +103,28 @@ function App() {
 
   }
 
-  const onClickRemoveBtn = (e, oldCard) => {
+  const onClickRemoveBtn = (oldCard) => {
     if (oldCard.count > 1) {
       setCard(cart => cart.map(item => {
         if (item.id === oldCard.id) {
 
-
+          // Edit on db.json
           editCard(`/${oldCard.id}`,{
             ...item,
             count: item.count - 1
           })
           
+          //Edit card on LocalStorage
+          let tmp = JSON.parse(localStorage.getItem('card'));
+
+          for (let localCard of tmp){
+            if(localCard.id === oldCard.id){
+              localCard.count--;
+            }
+          }
+          localStorage.setItem('card', JSON.stringify(tmp))
+
+
           return {
             ...item,
             count: item.count - 1,
@@ -81,14 +133,31 @@ function App() {
         return item
       }))
     } else {
+
+      // Remove on db.json
       deleteCard(`/${oldCard.id}`)
       setCard(cart => cart.filter(item => item.id !== oldCard.id))
+
+      //Remove card on LocalStorage
+      let tmp = JSON.parse(localStorage.getItem('card'));
+      tmp = tmp.filter(localCard => localCard.id !== oldCard.id);
+      localStorage.setItem('card', JSON.stringify(tmp))
+      
     }
   }
 
 
   const onClickAddFavorite = (newCard) => {
-    console.log(favorites)
+
+    //Add to localStorage
+
+    let favoritesLocal = JSON.parse(localStorage.getItem('favorites'))
+    if(favoritesLocal){
+      localStorage.setItem('favorites',JSON.stringify([...favoritesLocal,newCard]))
+    } else {
+      localStorage.setItem('favorites',JSON.stringify([newCard]))
+    }
+    
     addFavorite('', newCard);
     setFavorites([...favorites, newCard])
   }
@@ -96,6 +165,11 @@ function App() {
     deleteFavorite(`/${oldCard.id}`, oldCard);
     setFavorites(item => item.filter(item => item.id !== oldCard.id))
 
+
+    //Remove from localStorage
+    let favoritesLocal = JSON.parse(localStorage.getItem('favorites'))
+    favoritesLocal = favoritesLocal.filter(item => item.id !== oldCard.id);
+    localStorage.setItem('favorites', JSON.stringify(favoritesLocal))
   }
 
 

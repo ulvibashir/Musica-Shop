@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AdditionalHeader({onCheckOutBtnClick, count}) {
+export function AdditionalHeader({onCheckOutBtnClick, count}) {
     return (
 
         <div className="additional-header">
@@ -36,4 +36,3 @@ function AdditionalHeader({onCheckOutBtnClick, count}) {
         </div>
     )
 }
-export default AdditionalHeader;

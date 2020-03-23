@@ -1,7 +1,7 @@
 import React from 'react'
 import FavoriteItem from './FavoriteItem'
 import { NavLink } from 'react-router-dom'
-function FavoritesPage({ favorites, onClickAddFavorite, onClickRemoveFavorite }) {
+export function FavoritesPage({ favorites, onClickAddFavorite, onClickRemoveFavorite }) {
     console.log(favorites)
     return (
 
@@ -35,4 +35,3 @@ function FavoritesPage({ favorites, onClickAddFavorite, onClickRemoveFavorite })
 
     )
 }
-export default FavoritesPage;

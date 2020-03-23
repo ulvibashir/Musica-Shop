@@ -1,16 +1,20 @@
 import React from 'react';
-import AdditionalHeader from './components/Header/AdditionalHeader'
-import MainHeader from './components/Header/MainHeader'
-import ImageSection from './components/ImageSection/ImageSection'
-import BodyHeading from './components/Body/BodyHeading';
-import LatestArrival from './components/CardsSection/LatestArrival'
-import AlbumsCurrently from './components/CardsSection/AlbumsCurrently'
-import ImportantPublisher from './components/ImportantPublisher/ImportantPublisher'
-import MainFooter from './components/MainFooter/MainFooter'
-import Checkout from './components/CardsSection/Checkout'
 
 
-function Homepage({
+import {
+  BodyHeading,
+  LatestArrival,
+  AlbumsCurrently,
+  Checkout,
+  MainHeader,
+  AdditionalHeader,
+  ImageSection,
+  ImportantPublisher,
+  MainFooter
+} from './components';
+
+
+export function Homepage({
   isCheckOutOpen,
   cards,
   onCheckOutBtnClick,
@@ -56,5 +60,3 @@ function Homepage({
     </div>
   );
 }
-
-export default Homepage;

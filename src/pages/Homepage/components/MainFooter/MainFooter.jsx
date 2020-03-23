@@ -5,7 +5,7 @@ const style = {
     backgroundImage: `url(${background})`
 }
 
-function MainFooter() {
+export function MainFooter() {
     return (
         <div className="main-footer" style={style}>
             <div className="container">
@@ -95,5 +95,3 @@ function MainFooter() {
         </div>
     )
 }
-
-export default MainFooter;

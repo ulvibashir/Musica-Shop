@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 
 
-function Checkout({ cards, onClickRemoveBtn, isNewPage }) {
+export function Checkout({ cards, onClickRemoveBtn, isNewPage }) {
 
     const total = () => {
         let sum = 0;
@@ -20,7 +20,7 @@ function Checkout({ cards, onClickRemoveBtn, isNewPage }) {
 
 
     return (
-        
+                
                 <div className="checkout-panel">
                     {cards.map(({ id, title, artist, rate, price, imgPath, salePrice, count }) => (
                         <CheckoutItem id={id}
@@ -60,4 +60,3 @@ function Checkout({ cards, onClickRemoveBtn, isNewPage }) {
     )
 }
 
-export default Checkout;

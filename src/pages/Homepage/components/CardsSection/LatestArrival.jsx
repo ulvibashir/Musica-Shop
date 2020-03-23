@@ -6,7 +6,7 @@ import background from '../Header/background.png';
 const style = {
     backgroundImage: `url(${background})`
 }
-function LatestArrival({onClickAddBtn, onClickRemoveFavorite, onClickAddFavorite, favorites}) {
+export function LatestArrival({onClickAddBtn, onClickRemoveFavorite, onClickAddFavorite, favorites}) {
 
     const [data, setData] = useState([]);
 
@@ -85,4 +85,3 @@ function LatestArrival({onClickAddBtn, onClickRemoveFavorite, onClickAddFavorite
     )
 }
 
-export default LatestArrival;

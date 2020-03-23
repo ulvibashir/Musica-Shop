@@ -6,7 +6,7 @@ import background from '../Header/background.png';
 const style = {
     backgroundImage: `url(${background})`
 }
-function AlbumsCurrently({onClickAddBtn, onClickRemoveFavorite, onClickAddFavorite, favorites}) {
+export function AlbumsCurrently({onClickAddBtn, onClickRemoveFavorite, onClickAddFavorite, favorites}) {
 
     const [data, setData] = useState([]);
 
@@ -100,5 +100,3 @@ function AlbumsCurrently({onClickAddBtn, onClickRemoveFavorite, onClickAddFavori
         </div>
     )
 }
-
-export default AlbumsCurrently;

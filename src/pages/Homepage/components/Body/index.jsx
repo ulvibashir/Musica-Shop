@@ -1,0 +1,1 @@
+export { BodyHeading } from './BodyHeading'

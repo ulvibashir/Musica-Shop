@@ -4,7 +4,7 @@ import background from '../Header/background.png';
 const style = {
     backgroundImage: `url(${background})`
 }
-function BodyHeading() {
+export function BodyHeading() {
     return (
         <div className="body-heading" style={style}>
             <div className="container">
@@ -59,4 +59,3 @@ function BodyHeading() {
         </div>
     )
 }
-export default BodyHeading;

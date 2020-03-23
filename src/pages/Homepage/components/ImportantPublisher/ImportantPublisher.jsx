@@ -6,7 +6,7 @@ const style = {
 }
 
 
-function ImportantPublisher() {
+export function ImportantPublisher() {
     return (
         <div className="important-publisher-section" style={style}>
             <div className="container">
@@ -34,4 +34,3 @@ function ImportantPublisher() {
         </div>
     )
 }
-export default ImportantPublisher;

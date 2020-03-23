@@ -809,4 +809,49 @@ body
         background-color: #424277  
 
         
-        
+    
+
+/* Modal Confirmation */
+.ReactModal__Overlay 
+    opacity: 0
+    transition: all .4s ease
+    z-index: 15
+
+.ReactModal__Overlay--after-open
+    opacity: 1
+
+.ReactModal__Overlay--before-close
+    opacity: 0
+
+.ReactModal__Content
+    box-shadow: 0 0 20px 
+
+.modal-container
+    height: 100%
+    display: flex
+    flex-direction: column  
+    justify-content: space-around
+    font-family: 'Oswald'
+    text-align: center
+    
+.modal-button-container
+    button
+        height: 35px
+        width: calc(( 100% - 100px ) / 2)
+        outline: none
+        border: none
+        border-radius: 5px
+        transition: all .4s ease
+        cursor: pointer
+
+.modal-ok
+    margin-right: 35px
+    background: gray
+    color: white
+    &:hover
+        background: #2a7e3d
+
+.modal-cancel
+    &:hover
+        color: white
+        background: #b46565

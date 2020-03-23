@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-
+import Modal from 'react-modal'
+Modal.setAppElement('#root')
 function Card({
     id,
     title,
@@ -15,7 +16,8 @@ function Card({
     favorites
 
 }) {
-
+    const [star, setStar] = useState(false)
+    const [isModalOpen, setIsModelOpen] = useState(false)
     useEffect(() => {
         for (let item of favorites) {
             if (item.id === id) {
@@ -26,9 +28,6 @@ function Card({
         setStar(false);
     }, [favorites,id])
 
-
-
-    const [star, setStar] = useState(false)
     const starClick = () => {
 
         if (!star) {
@@ -58,8 +57,56 @@ function Card({
 
         setStar(!star)
     };
+
+    const customModalStyles = {
+        content: {
+            margin: 'auto',
+            width: '450px',
+            height: '250px',
+            borderRadius: '15px'
+
+        }
+    };
+
+
+
+
     return (
         <div className="main-card">
+
+            <Modal
+                isOpen={isModalOpen}
+                style={customModalStyles}
+                onRequestClose={() => setIsModelOpen(false)}>
+
+                <div className="modal-container">
+
+                    <h1>Are you sure ?</h1>
+
+                    <div className="modal-button-container">
+                        <button className="modal-ok" onClick={() => {
+                            setIsModelOpen(false)
+                            onClickAddBtn({
+                                id,
+                                title,
+                                artist,
+                                rate,
+                                description,
+                                price,
+                                salePrice,
+                                imgPath,
+                            })
+
+
+                        }}> YES </button>
+                        <button className="modal-cancel" onClick={() => setIsModelOpen(false)}> CANCEL </button>
+
+                    </div>
+                </div>
+
+            </Modal>
+
+
             <img src={imgPath} alt="main-img" />
             <div className="card-title-artist">
                 <p className="card-title">{title}</p>
@@ -89,16 +136,13 @@ function Card({
 
 
                 <button onClick={(e) => {
-                    onClickAddBtn(e, {
-                        id,
-                        title,
-                        artist,
-                        rate,
-                        description,
-                        price,
-                        salePrice,
-                        imgPath,
-                    })
+
+                    // Modal confirmation
+                    setIsModelOpen(true);
+                   
+
+
+
                 }}>Add to card</button>
 
 

@@ -4,7 +4,7 @@ import background from './background.png';
 const style = {
     backgroundImage: `url(${background})`
 }
-function MainHeader() {
+export function MainHeader() {
     return (    
         <div className="main-header" style={style}>
             <div className="container">
@@ -25,5 +25,3 @@ function MainHeader() {
         </div>
     )
 }
-
-export default MainHeader;

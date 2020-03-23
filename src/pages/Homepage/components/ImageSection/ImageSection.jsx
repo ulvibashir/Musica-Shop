@@ -10,7 +10,7 @@ const slideImages = [
 
 let timeInterval = null;
 
-function ImageSection() {
+export function ImageSection() {
     const [active, setActive] = useState(0)
 
     const onClickLeft = () => {
@@ -78,4 +78,3 @@ function ImageSection() {
     )
 }
 
-export default ImageSection;
